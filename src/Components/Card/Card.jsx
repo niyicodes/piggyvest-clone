@@ -47,7 +47,7 @@ const CardComponent = styled.div`
  }
  span {
   svg {
-   background-color: ;
+   /* background-color: ; */
    border-radius: 50%;
    color: black !important;
   }

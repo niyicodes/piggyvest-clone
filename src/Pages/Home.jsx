@@ -4,8 +4,11 @@ import styled from "styled-components";
 import Button from "../Components/Button/Button";
 import Card from "../Components/Card/Card";
 import Girl from "/assets/girl.png";
-import Security from "/assets/security.png"
-import cardDetails from "../Components/Card/cardDetails"
+import Security from "/assets/security.png";
+import Savers from "/assets/savers.jpg";
+import Invest from "/assets/invest.png";
+import cardDetails from "../Components/Card/cardDetails";
+import { RightArrow } from "../Components/Icons/icon";
 
 const Home = () => {
  return (
@@ -43,7 +46,11 @@ const Home = () => {
     </div>
     <div className="security-text">
      <h3>Your security is our priority</h3>
-     <p>PiggyVest uses the highest level of Internet Security and it is secured by 256 bits SSL security encryption to ensure that your information is comepletely protected from fraud.</p>
+     <p>
+      PiggyVest uses the highest level of Internet Security and it is secured by
+      256 bits SSL security encryption to ensure that your information is
+      comepletely protected from fraud.
+     </p>
      <Link to="https://www.piggyvest.com/security" target="_blank">
       Learn more
      </Link>
@@ -56,12 +63,46 @@ const Home = () => {
      <Button to="/flex" name="Start Saving" />
     </div>
     <div className="card-area">
-    {cardDetails.map(({ topIcon, name, words, title }) => {
-     return(
-      <Card key={title} topIcon={topIcon} name={name} words={words} title={title}/>
-     )
-    })}
+     {cardDetails.map(({ topIcon, name, words, title }) => {
+      return (
+       <Card
+        key={title}
+        topIcon={topIcon}
+        name={name}
+        words={words}
+        title={title}
+       />
+      );
+     })}
     </div>
+   </section>
+   <section className="invest">
+    <div className="invest-img">
+     <img src={Invest} alt="invest" />
+    </div>
+    <div className="invest-text">
+     <h5>
+     Up To 25% Returns
+     </h5>
+     <h3>Access investment opportunities</h3>
+     <p>
+      Invest securely and confidently on the go. Grow your money confidently by
+      investing in pre-vetted investment opportunities.
+     </p>
+     <Link to="">Learn more about Investments </Link>
+    </div>
+   </section>
+   <section className="saver">
+     <div className="saver-meet">
+     <h2>Meet the saver of the month!</h2>
+     <p>Every month, we shine a spotlight on one saver, asking them questions about their savings culture and how the product is specifically helping them shape how they spend and save for future responsibilities.</p>
+     <span>
+      <RightArrow /> Meet the Oyetade's
+     </span>
+     </div>
+     <div className="saver-picture">
+<img src={Savers} alt="" />
+     </div>
    </section>
   </HomePage>
  );
@@ -101,7 +142,7 @@ const HomePage = styled.main`
    button {
     border: none;
     outline: none;
-    padding: 18px 30px!important;
+    padding: 18px 30px !important;
     background-color: #0c1825;
     color: white;
 
@@ -128,66 +169,66 @@ const HomePage = styled.main`
    }
   }
  }
- .security{
+ .security {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   gap: 2rem;
   margin: 4rem auto;
-  img{
+  img {
    width: 150px;
   }
-  .security-text{
+  .security-text {
    width: 50%;
-   h3{
+   h3 {
     font-size: 35px;
     padding-bottom: 15px;
     line-height: 1.2;
    }
-   p{
+   p {
     font-size: 15px;
     padding-bottom: 10px;
    }
   }
  }
- .build{
+ .build {
   display: flex;
   gap: 2rem;
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin:3rem 0;
+  margin: 3rem 0;
 
-  .build-area{
+  .build-area {
    display: flex;
    flex-direction: column;
    gap: 1rem;
    justify-content: space-between;
    width: 30%;
-   h4{
+   h4 {
     font-size: 40px;
     line-height: 1.3;
     width: 80%;
     padding-bottom: 15px;
    }
-   p{
+   p {
     font-size: 20px;
     line-height: 1.2;
     width: 80%;
-    padding-bottom:15px;
+    padding-bottom: 15px;
    }
-   button{
-    background-color: #0C1825;
+   button {
+    background-color: #0c1825;
     color: white;
-    padding: 15px!important;
+    padding: 15px !important;
 
-    &:hover{
+    &:hover {
      background-color: #0d60d8;
     }
    }
   }
-  .card-area{
+  .card-area {
    width: 60%;
    display: grid;
    grid-template-columns: repeat(2, auto);
@@ -195,123 +236,217 @@ const HomePage = styled.main`
    gap: 2rem;
   }
  }
+ .invest {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  margin: 4rem auto;
+  padding: 0 20px;
+  width: 75%;
+
+  &-img {
+   width: 50%;
+   img {
+    width: auto;
+   }
+  }
+  &-text {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   gap: 1.5rem;
+
+   h5 {
+    font-family: 'DM Sans', sans-serif!important;
+    color: #7913e5;
+    font-weight: 700;
+   }
+   h3{
+    font-family: "Inter", sans-serif !important;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2;
+   }
+   p{
+    font-family: 'DM Sans', sans-serif!important;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 1.4;
+   }
+   a{
+    font-family: 'DM Sans', sans-serif!important;
+    font-weight: 500;
+    text-decoration: none;
+    color: #7913e5;
+    transition: all 1s ease-in;
+    left: 0;
+    &:hover{
+     text-decoration: underline;
+     left: 100px;
+    }
+   }
+  }
+ }
+ .saver{
+
+ }
 
  /* exceptions */
 
- @media screen and (max-width: 428px){
-  .textimg{
+ @media screen and (max-width: 428px) {
+  .textimg {
    flex-direction: column;
    gap: 2rem;
-   margin:1rem;
-   .text{
+   margin: 1rem;
+   .text {
     width: 95%;
-    text-align: center!important;
-    h3{
+    text-align: center !important;
+    h3 {
      width: 100%;
      font-size: 55px;
      /* line-height: 1.1; */
     }
-    p{
+    p {
      width: 100%;
      font-size: 15px;
-     text-align: center!important;
+     text-align: center !important;
     }
-    
-    .getapps{
+
+    .getapps {
      flex-direction: column;
     }
    }
-   .img{
-   width: 100%;
-   align-items: center;
-   img{
+   .img {
     width: 100%;
+    align-items: center;
+    img {
+     width: 100%;
+    }
    }
   }
-  }
-  .security{
+  .security {
    flex-direction: column;
    text-align: center;
-   .security-text{
+   .security-text {
     width: 90%;
    }
   }
-  .build{
+  .build {
    flex-direction: column;
    text-align: center;
-   
-   .build-area{
+
+   .build-area {
     width: 95%;
-    h4{
+    h4 {
      width: 100%;
     }
-    p{
+    p {
      width: 100%;
     }
    }
-   .card-area{
+   .card-area {
     display: flex;
     flex-direction: column;
     text-align: center;
     width: 85%;
    }
   }
+  .invest {
+   flex-direction: column;
+   width: 90%;
+   padding: 0 5px;
+
+   &-img{
+    width: 80%;
+    img{
+     width: 100%;
+    }
+   }
+   &-text{
+    text-align: center;
+    h3{
+     font-size: 35px;
+    }
+    p{
+     font-size: 20px;
+    }
+   }
+  }
+  .saver{
+
+  }
  }
- @media screen and (max-width: 960px){
-  .textimg{
+ @media screen and (max-width: 960px) {
+  .textimg {
    flex-direction: column;
    gap: 2rem;
-   margin:1rem;
-   .text{
+   margin: 1rem;
+   .text {
     width: 95%;
-    text-align: center!important;
-    h3{
+    text-align: center !important;
+    h3 {
      width: 100%;
      font-size: 55px;
      /* line-height: 1.1; */
     }
-    p{
+    p {
      width: 100%;
      font-size: 15px;
-     text-align: center!important;
+     text-align: center !important;
     }
-    
-    .getapps{
+
+    .getapps {
      flex-direction: column;
     }
    }
-   .img{
-   width: 80%;
-   margin: 0 auto;
-   align-items: center;
-   img{
-    width: 100%;
+   .img {
+    width: 80%;
+    margin: 0 auto;
+    align-items: center;
+    img {
+     width: 100%;
+    }
    }
   }
-  }
-  .security{
+  .security {
    flex-direction: column;
    text-align: center;
-   .security-text{
+   .security-text {
     width: 90%;
    }
   }
-  .build{
+  .build {
    flex-direction: column;
    text-align: center;
-   
-   .build-area{
+
+   .build-area {
     width: 95%;
-    h4{
+    h4 {
      width: 100%;
     }
-    p{
+    p {
      width: 100%;
     }
    }
-   .card-area{
+   .card-area {
     width: 85%;
    }
+  }
+  .invest {
+   padding:0 10px!important ;
+   &-text{
+    h3{
+     font-size: 45px;
+    }
+    p{
+     font-size: 19px;
+    }
+   }
+  }
+  .saver{
+
   }
  }
 `;
