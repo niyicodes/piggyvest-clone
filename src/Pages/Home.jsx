@@ -94,16 +94,19 @@ const Home = () => {
    </section>
    <section className="saver">
      <div className="saver-meet">
+     <div className="another">
      <h2>Meet the saver of the month!</h2>
      <p>Every month, we shine a spotlight on one saver, asking them questions about their savings culture and how the product is specifically helping them shape how they spend and save for future responsibilities.</p>
      <span>
       <RightArrow /> Meet the Oyetade's
      </span>
      </div>
+     </div>
      <div className="saver-picture">
 <img src={Savers} alt="" />
      </div>
    </section>
+   <section className="customers"></section>
   </HomePage>
  );
 };
@@ -290,6 +293,54 @@ const HomePage = styled.main`
   }
  }
  .saver{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #0D60D8;
+  margin: 4rem 0;
+  height: 500px;
+
+  &-meet{
+   padding: 2rem 2.5rem;
+   color: white;
+   width: 60%;
+
+   .another{
+    width: 80%;
+    margin: auto;
+   }
+   h2{
+    font-size: 50px;
+    line-height: 1.1;
+    width: 90%;
+    padding-bottom: 15px;
+   }
+   p{
+    font-size: 20px;
+    /* width: 95%; */
+    padding-bottom: 15px;
+   }
+   span{
+    padding-top: 15px;
+    svg{
+     color: #0D60D8!important;
+     border-radius: 50%;
+     background-color: white;
+    }
+   }
+  }
+  &-picture{
+   width: 40%;
+   height: 100%;
+   img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   }
+  }
+ }
+ .customer{
 
  }
 
@@ -375,6 +426,26 @@ const HomePage = styled.main`
    }
   }
   .saver{
+   flex-direction: column;
+   height: 100%;
+   align-items: center;
+   &-meet{
+    padding: 2rem 1rem;
+    width: 100%;
+    text-align: center;
+    .another{
+     width: 100%;
+    }
+    h2{
+     width: 100%;
+     font-size: 30px;
+    }
+   }
+   &-picture{
+    width: 100%;
+   }
+  }
+  .customer{
 
   }
  }
@@ -447,6 +518,9 @@ const HomePage = styled.main`
   }
   .saver{
 
+  }
+  .customer{
+   
   }
  }
 `;
