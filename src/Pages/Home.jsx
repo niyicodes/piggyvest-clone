@@ -1,36 +1,318 @@
-import React from 'react'
-import styled from 'styled-components'
-import Button from '../Components/Button/Button'
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import Button from "../Components/Button/Button";
+import Card from "../Components/Card/Card";
+import Girl from "/assets/girl.png";
+import Security from "/assets/security.png"
+import cardDetails from "../Components/Card/cardDetails"
 
 const Home = () => {
-
-  return (
-    <HomePage>
-      <section className="textimg">
-        <div className="text">
-          <h3>
-          The Better Way to Save & Invest.
-          </h3>
-          <p>
-          PiggyVest helps over 4 million customers achieve their financial goals by helping them save and invest with ease.
-          </p>
-          <Button to="" name="Create free account"/>
-          <div className="getapps">
-            <Button to="https://apps.apple.com/ng/app/piggyvest/id1263117994" name="Get on iPhone" target="_blank" rel="noopener noreferrer"/>
-            <Button to="https://play.google.com/store/apps/details?id=com.piggybankng.piggy" name="Get on Andriod" target="_blank" rel="noopener noreferrer"/>
-          </div>
-        </div>
-        <div className="img"></div>
-      </section>
-    </HomePage>
-  )
-}
+ return (
+  <HomePage>
+   <section className="textimg">
+    <div className="text">
+     <h3>The Better Way to Save & Invest.</h3>
+     <p>
+      PiggyVest helps over 4 million customers achieve their financial goals by
+      helping them save and invest with ease.
+     </p>
+     <Button to="/register" name="Create free account" />
+     <div className="getapps">
+      <Button
+       to="https://apps.apple.com/ng/app/piggyvest/id1263117994"
+       name="Get on iPhone"
+       target="_blank"
+       rel="noopener noreferrer"
+      />
+      <Button
+       to="https://play.google.com/store/apps/details?id=com.piggybankng.piggy"
+       name="Get on Andriod"
+       target="_blank"
+       rel="noopener noreferrer"
+      />
+     </div>
+    </div>
+    <div className="img">
+     <img src={Girl} alt="girl" />
+    </div>
+   </section>
+   <section className="security">
+    <div>
+     <img src={Security} alt="security" />
+    </div>
+    <div className="security-text">
+     <h3>Your security is our priority</h3>
+     <p>PiggyVest uses the highest level of Internet Security and it is secured by 256 bits SSL security encryption to ensure that your information is comepletely protected from fraud.</p>
+     <Link to="https://www.piggyvest.com/security" target="_blank">
+      Learn more
+     </Link>
+    </div>
+   </section>
+   <section className="build">
+    <div className="build-area">
+     <h4>4 ways to build your savings</h4>
+     <p>Earn 5%-15% when you save with any of these PiggyVest plans.</p>
+     <Button to="/flex" name="Start Saving" />
+    </div>
+    <div className="card-area">
+    {cardDetails.map(({ topIcon, name, words, title }) => {
+     return(
+      <Card key={title} topIcon={topIcon} name={name} words={words} title={title}/>
+     )
+    })}
+    </div>
+   </section>
+  </HomePage>
+ );
+};
 
 const HomePage = styled.main`
-  .textimg{
+ .textimg {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  margin-left: 6rem;
+  margin-top: 3rem;
+
+  .text {
+   width: 50%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   gap: 1rem;
+   h3 {
+    font-family: "Inter", sans-serif !important;
+    font-weight: 700;
+    font-size: 60px;
+    width: 70%;
+    line-height: 1.3;
+    color: #0c1825;
+   }
+   p {
+    font-family: "DM Sans", sans-serif !important;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 70%;
+    font-size: 20px;
+    text-align: justify;
+   }
+   button {
+    border: none;
+    outline: none;
+    padding: 18px 30px!important;
+    background-color: #0c1825;
+    color: white;
+
+    &:hover {
+     background-color: #0d60d8;
+    }
+   }
+   .getapps {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    gap: 1rem;
+    button {
+     background-color: transparent;
+     color: black;
+     border: 1px solid grey;
+     padding: 10px 15px;
+    }
+   }
   }
-`
-export default Home
+  .img {
+   width: 40%;
+   position: relative;
+   img {
+    width: 70%;
+   }
+  }
+ }
+ .security{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+  margin: 4rem auto;
+  img{
+   width: 150px;
+  }
+  .security-text{
+   width: 50%;
+   h3{
+    font-size: 35px;
+    padding-bottom: 15px;
+    line-height: 1.2;
+   }
+   p{
+    font-size: 15px;
+    padding-bottom: 10px;
+   }
+  }
+ }
+ .build{
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin:3rem 0;
+
+  .build-area{
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+   justify-content: space-between;
+   width: 30%;
+   h4{
+    font-size: 40px;
+    line-height: 1.3;
+    width: 80%;
+    padding-bottom: 15px;
+   }
+   p{
+    font-size: 20px;
+    line-height: 1.2;
+    width: 80%;
+    padding-bottom:15px;
+   }
+   button{
+    background-color: #0C1825;
+    color: white;
+    padding: 15px!important;
+
+    &:hover{
+     background-color: #0d60d8;
+    }
+   }
+  }
+  .card-area{
+   width: 60%;
+   display: grid;
+   grid-template-columns: repeat(2, auto);
+   row-gap: 2rem;
+   gap: 2rem;
+  }
+ }
+
+ /* exceptions */
+
+ @media screen and (max-width: 428px){
+  .textimg{
+   flex-direction: column;
+   gap: 2rem;
+   margin:1rem;
+   .text{
+    width: 95%;
+    text-align: center!important;
+    h3{
+     width: 100%;
+     font-size: 55px;
+     /* line-height: 1.1; */
+    }
+    p{
+     width: 100%;
+     font-size: 15px;
+     text-align: center!important;
+    }
+    
+    .getapps{
+     flex-direction: column;
+    }
+   }
+   .img{
+   width: 100%;
+   align-items: center;
+   img{
+    width: 100%;
+   }
+  }
+  }
+  .security{
+   flex-direction: column;
+   text-align: center;
+   .security-text{
+    width: 90%;
+   }
+  }
+  .build{
+   flex-direction: column;
+   text-align: center;
+   
+   .build-area{
+    width: 95%;
+    h4{
+     width: 100%;
+    }
+    p{
+     width: 100%;
+    }
+   }
+   .card-area{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 85%;
+   }
+  }
+ }
+ @media screen and (max-width: 960px){
+  .textimg{
+   flex-direction: column;
+   gap: 2rem;
+   margin:1rem;
+   .text{
+    width: 95%;
+    text-align: center!important;
+    h3{
+     width: 100%;
+     font-size: 55px;
+     /* line-height: 1.1; */
+    }
+    p{
+     width: 100%;
+     font-size: 15px;
+     text-align: center!important;
+    }
+    
+    .getapps{
+     flex-direction: column;
+    }
+   }
+   .img{
+   width: 80%;
+   margin: 0 auto;
+   align-items: center;
+   img{
+    width: 100%;
+   }
+  }
+  }
+  .security{
+   flex-direction: column;
+   text-align: center;
+   .security-text{
+    width: 90%;
+   }
+  }
+  .build{
+   flex-direction: column;
+   text-align: center;
+   
+   .build-area{
+    width: 95%;
+    h4{
+     width: 100%;
+    }
+    p{
+     width: 100%;
+    }
+   }
+   .card-area{
+    width: 85%;
+   }
+  }
+ }
+`;
+export default Home;
