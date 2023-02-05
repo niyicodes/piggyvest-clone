@@ -81,9 +81,7 @@ const Home = () => {
      <img src={Invest} alt="invest" />
     </div>
     <div className="invest-text">
-     <h5>
-     Up To 25% Returns
-     </h5>
+     <h5>Up To 25% Returns</h5>
      <h3>Access investment opportunities</h3>
      <p>
       Invest securely and confidently on the go. Grow your money confidently by
@@ -93,18 +91,22 @@ const Home = () => {
     </div>
    </section>
    <section className="saver">
-     <div className="saver-meet">
+    <div className="saver-meet">
      <div className="another">
-     <h2>Meet the saver of the month!</h2>
-     <p>Every month, we shine a spotlight on one saver, asking them questions about their savings culture and how the product is specifically helping them shape how they spend and save for future responsibilities.</p>
-     <span>
-      <RightArrow /> Meet the Oyetade's
-     </span>
+      <h2>Meet the saver of the month!</h2>
+      <p>
+       Every month, we shine a spotlight on one saver, asking them questions
+       about their savings culture and how the product is specifically helping
+       them shape how they spend and save for future responsibilities.
+      </p>
+      <span>
+       <RightArrow /> Meet the Oyetade's
+      </span>
      </div>
-     </div>
-     <div className="saver-picture">
-<img src={Savers} alt="" />
-     </div>
+    </div>
+    <div className="saver-picture">
+     <img src={Savers} alt="" />
+    </div>
    </section>
    <section className="customers"></section>
   </HomePage>
@@ -262,86 +264,85 @@ const HomePage = styled.main`
    gap: 1.5rem;
 
    h5 {
-    font-family: 'DM Sans', sans-serif!important;
+    font-family: "DM Sans", sans-serif !important;
     color: #7913e5;
     font-weight: 700;
    }
-   h3{
+   h3 {
     font-family: "Inter", sans-serif !important;
     font-size: 50px;
     font-weight: 700;
     line-height: 1.2;
    }
-   p{
-    font-family: 'DM Sans', sans-serif!important;
+   p {
+    font-family: "DM Sans", sans-serif !important;
     font-weight: 400;
     font-size: 25px;
     line-height: 1.4;
    }
-   a{
-    font-family: 'DM Sans', sans-serif!important;
+   a {
+    font-family: "DM Sans", sans-serif !important;
     font-weight: 500;
     text-decoration: none;
     color: #7913e5;
     transition: all 1s ease-in;
     left: 0;
-    &:hover{
+    &:hover {
      text-decoration: underline;
      left: 100px;
     }
    }
   }
  }
- .saver{
+ .saver {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #0D60D8;
+  background-color: #0d60d8;
   margin: 4rem 0;
   height: 500px;
 
-  &-meet{
+  &-meet {
    padding: 2rem 2.5rem;
    color: white;
    width: 60%;
 
-   .another{
+   .another {
     width: 80%;
     margin: auto;
    }
-   h2{
+   h2 {
     font-size: 50px;
     line-height: 1.1;
     width: 90%;
     padding-bottom: 15px;
    }
-   p{
+   p {
     font-size: 20px;
     /* width: 95%; */
     padding-bottom: 15px;
    }
-   span{
+   span {
     padding-top: 15px;
-    svg{
-     color: #0D60D8!important;
+    svg {
+     color: #0d60d8 !important;
      border-radius: 50%;
      background-color: white;
     }
    }
   }
-  &-picture{
+  &-picture {
    width: 40%;
    height: 100%;
-   img{
+   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
    }
   }
  }
- .customer{
-
+ .customer {
  }
 
  /* exceptions */
@@ -409,44 +410,43 @@ const HomePage = styled.main`
    width: 90%;
    padding: 0 5px;
 
-   &-img{
+   &-img {
     width: 80%;
-    img{
+    img {
      width: 100%;
     }
    }
-   &-text{
+   &-text {
     text-align: center;
-    h3{
+    h3 {
      font-size: 35px;
     }
-    p{
+    p {
      font-size: 20px;
     }
    }
   }
-  .saver{
+  .saver {
    flex-direction: column;
    height: 100%;
    align-items: center;
-   &-meet{
+   &-meet {
     padding: 2rem 1rem;
     width: 100%;
     text-align: center;
-    .another{
+    .another {
      width: 100%;
     }
-    h2{
+    h2 {
      width: 100%;
      font-size: 30px;
     }
    }
-   &-picture{
+   &-picture {
     width: 100%;
    }
   }
-  .customer{
-
+  .customer {
   }
  }
  @media screen and (max-width: 960px) {
@@ -506,21 +506,19 @@ const HomePage = styled.main`
    }
   }
   .invest {
-   padding:0 10px!important ;
-   &-text{
-    h3{
+   padding: 0 10px !important ;
+   &-text {
+    h3 {
      font-size: 45px;
     }
-    p{
+    p {
      font-size: 19px;
     }
    }
   }
-  .saver{
-
+  .saver {
   }
-  .customer{
-   
+  .customer {
   }
  }
 `;
