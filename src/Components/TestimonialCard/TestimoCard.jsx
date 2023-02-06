@@ -1,21 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import TestiPerson from "/assets/testi1.jpg";
-const TestimoCard = () => {
+
+const TestimoCard = ({ date, image, name, testimony }) => {
  return (
   <TestiCard>
-   <h6>Thursday, 27th of October 2022 by 13:03pm</h6>
+   <h6>{date}</h6>
    <div className="person">
-    <img src={TestiPerson} alt="" />
+    <img src={image} alt="" />
     <div className="person-Details">
-     <h4>Rachael O</h4>
-     <p>
-      My name is Rachael Joseph and I am here to testify that Piggyvest has
-      helped me a lot. I had to spread the good news to my friends and tell them
-      about the app and behold they are also using it. Thank you so much
-      Pggyvest for saving me cause I am the type of person that spends lavishly.
-      Thank you once again Piggyvest 💙
-     </p>
+     <h4>{name}</h4>
+     <p>{testimony}</p>
     </div>
    </div>
   </TestiCard>
@@ -28,7 +23,7 @@ const TestiCard = styled.div`
  justify-self: center;
  align-self: center;
  gap: 1rem;
- padding: 20px 25px!important;
+ padding: 20px 25px !important;
  width: auto;
  border: none;
  margin-bottom: 1rem;
@@ -69,7 +64,7 @@ const TestiCard = styled.div`
  }
  @media screen and (max-width: 428px) {
   /* width: 100%!important; */
-    padding: 15px;
+  padding: 15px;
   h6 {
    font-size: 9px;
   }

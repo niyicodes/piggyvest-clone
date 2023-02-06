@@ -13,6 +13,8 @@ import Invest from "/assets/invest.png";
 import cardDetails from "../Components/Card/cardDetails";
 import { RightArrow } from "../Components/Icons/icon";
 import TestimoCard from "../Components/TestimonialCard/TestimoCard";
+import testimonies from "../Components/TestimonialCard/testimonials";
+
 
 const Home = () => {
  const settings = {
@@ -128,10 +130,11 @@ const Home = () => {
    <section className="customers">
     <div className="customers-slider">
      <Slider {...settings}>
-      <TestimoCard />
-      <TestimoCard />
-      <TestimoCard />
-      <TestimoCard />
+      {testimonies.map(({date, image, name, testimony}) => {
+       return(
+        <TestimoCard key={image} date={date} image={image} name={name} testimony={testimony}/>
+       )
+      })}
      </Slider>
     </div>
     <div className="customers-text">
