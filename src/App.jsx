@@ -13,6 +13,7 @@ import Target from './Pages/Target'
 import Navbar from "./Components/Navbar/Navbar"
 import Featured from './Components/Featured/Featured'
 import Footer from './Components/Footer/Footer'
+import Customers from './Components/Customers/Customers'
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path='/login' element={<SignIn />} />
         <Route path='/register' element={<SignUp />} />
       </Routes>
+      <Customers />
       <Featured />
       <Footer />
     </div>
