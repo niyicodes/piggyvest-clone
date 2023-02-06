@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Investment from "../Components/Invest/Investment";
 import InvestImage from "/assets/invest.png";
-import investGuide from "../Components/Invest/InvestGuide";
+import investGuide from "../Components/Invest/investGuide";
 import Card from "../Components/Card/Card";
 import Grow from "../Components/Grow/Grow";
 import growImage from "/assets/grow.png";
@@ -157,18 +157,18 @@ const InvestPage = styled.main`
     padding: 2rem 1rem;
     width: 100%;
     text-align: center;
-    .another{
-      width: 90%;
+    .another {
+     width: 90%;
     }
     h2 {
      width: 100%;
      font-size: 28px;
      padding-bottom: 10px;
     }
-    p{
-      width: 100%;
-      font-size: 12px;
-      padding-top: 10px;
+    p {
+     width: 100%;
+     font-size: 12px;
+     padding-top: 10px;
     }
    }
    &-picture {
@@ -204,21 +204,21 @@ const InvestPage = styled.main`
     }
    }
   }
-  .saver{
-    &-meet{
-      padding: 1rem 1rem;
-      .another{
-        width: 95%;
-      }
-      h2{
-        font-size: 30px;
-        width: 100%;
-      }
-      p{
-        font-size: 17px;
-        text-align: justify;
-      }
+  .saver {
+   &-meet {
+    padding: 1rem 1rem;
+    .another {
+     width: 95%;
     }
+    h2 {
+     font-size: 30px;
+     width: 100%;
+    }
+    p {
+     font-size: 17px;
+     text-align: justify;
+    }
+   }
   }
  }
 `;
