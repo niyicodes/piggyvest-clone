@@ -9,8 +9,8 @@ import Savers from "/assets/savers.jpg";
 import Invest from "/assets/invest.png";
 import cardDetails from "../Components/Card/cardDetails";
 import { RightArrow } from "../Components/Icons/icon";
-
-
+import Investment from "../Components/Invest/Investment";
+import Grow from "../Components/Grow/Grow";
 
 const Home = () => {
  return (
@@ -78,38 +78,21 @@ const Home = () => {
      })}
     </div>
    </section>
-   <section className="invest">
-    <div className="invest-img">
-     <img src={Invest} alt="invest" />
-    </div>
-    <div className="invest-text">
-     <h5>Up To 25% Returns</h5>
-     <h3>Access investment opportunities</h3>
-     <p>
-      Invest securely and confidently on the go. Grow your money confidently by
-      investing in pre-vetted investment opportunities.
-     </p>
-     <Link to="">Learn more about Investments </Link>
-    </div>
-   </section>
-   <section className="saver">
-    <div className="saver-meet">
-     <div className="another">
-      <h2>Meet the saver of the month!</h2>
-      <p>
-       Every month, we shine a spotlight on one saver, asking them questions
-       about their savings culture and how the product is specifically helping
-       them shape how they spend and save for future responsibilities.
-      </p>
-      <span>
-       <RightArrow /> Meet the Oyetade's
-      </span>
-     </div>
-    </div>
-    <div className="saver-picture">
-     <img src={Savers} alt="" />
-    </div>
-   </section>
+   <Investment
+    image={Invest}
+    tag="Up To 25% Returns"
+    title="Access investment opportunities"
+    subtitle="Invest securely and confidently on the go. Grow your money confidently by investing in pre-vetted investment opportunities."
+    link="Learn more about Investments"
+    linkto="/invest"
+    to=""
+   />
+   <Grow
+    title="Meet the saver of the month!"
+    subtitle="Every month, we shine a spotlight on one saver, asking them questions about their savings culture and how the product is specifically helping them shape how they spend and save for future responsibilities."
+    name="Meet the Oyetade's"
+    image={Savers}
+   />
   </HomePage>
  );
 };
@@ -343,7 +326,6 @@ const HomePage = styled.main`
    }
   }
  }
- 
 
  /* exceptions */
 
@@ -446,7 +428,6 @@ const HomePage = styled.main`
     width: 100%;
    }
   }
-  
  }
  @media screen and (max-width: 960px) {
   .textimg {
@@ -516,7 +497,6 @@ const HomePage = styled.main`
   }
   .saver {
   }
-
  }
 `;
 export default Home;

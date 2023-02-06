@@ -4,14 +4,16 @@ import { RightArrow } from "../Icons/icon";
 
 const Card = ({ topIcon, name, words, title, color }) => {
  return (
-  <CardComponent>
+  <CardComponent className="card">
    <img src={topIcon} alt="" />
    <h2>{name}</h2>
    <p>{words}</p>
-   <span>
-    <RightArrow style={color}/>
-    <h4>{title}</h4>
-   </span>
+   {
+    <span>
+     {title && <RightArrow style={color} />}
+     {title && <h4>{title}</h4>}
+    </span>
+   }
   </CardComponent>
  );
 };

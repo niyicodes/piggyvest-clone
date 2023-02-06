@@ -3,3 +3,5 @@ font-family: 'DM Sans', sans-serif!important;
 
 background: #7913E5;
 background: #F7F0FF;
+@media screen and (max-width: 428px){}
+@media screen and (max-width: 960px){}
