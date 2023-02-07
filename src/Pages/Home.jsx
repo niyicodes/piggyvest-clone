@@ -12,6 +12,8 @@ import { RightArrow } from "../Components/Icons/icon";
 import Investment from "../Components/Invest/Investment";
 import Grow from "../Components/Grow/Grow";
 import Customers from "../Components/Customers/Customers";
+import Featured from "../Components/Featured/Featured";
+import Footer from "../Components/Footer/Footer";
 
 
 const Home = () => {
@@ -96,6 +98,8 @@ const Home = () => {
     image={Savers}
    />
    <Customers />
+   <Featured />
+   <Footer />
   </HomePage>
  );
 };

@@ -10,9 +10,8 @@ import FAQ from "./Pages/FAQs";
 import InvestmentPage from "./Pages/InvestmentPage";
 import Target from "./Pages/Target";
 import Navbar from "./Components/Navbar/Navbar";
-import Footer from "./Components/Footer/Footer";
 import investments from "./Components/Invest/investments";
-import Featured from "./Components/Featured/Featured";
+
 
 function App() {
  const [Investments, setInvestments] = useState(investments);
@@ -26,15 +25,13 @@ function App() {
     <Route path="/targets" element={<Target />} />
     <Route path="/flex-naira" element={<Flex />} />
     <Route path="/invest" element={<Invest Investments={Investments} />} />
-    <Route path="/stories" element={<Stories />} />
-    <Route path="/faq" element={<FAQ />} />
     <Route
      path="/invest/:id"
      element={<InvestmentPage Investments={Investments} />}
     />
+    <Route path="/stories" element={<Stories />} />
+    <Route path="/faq" element={<FAQ />} />
    </Routes>
-   <Featured />
-   <Footer />
   </div>
  );
 }

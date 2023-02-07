@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
-import AllInvestmentsArea from "../Components/AllInvestments/AllInvestmentsArea";
 import Button from "../Components/Button/Button";
 import { LeftArrow } from "../Components/Icons/icon";
 import person from "/assets/icon.png";
 import verified from "/assets/verified.png";
+
 
 const InvestmentPage = ({ Investments }) => {
  const { id } = useParams();
@@ -15,73 +15,66 @@ const InvestmentPage = ({ Investments }) => {
   document.title = `${investment.name}™ - PiggyVest`;
  }, []);
  return (
-  <Investmentpage className="investmentPage">
-   <Investment>
-    <div className="investment">
-     <h3 className="investment-arrow" onClick={() => navigate("/invest")}>
-      <LeftArrow /> Investify
-     </h3>
-     <div className="investment-card">
-      <img src={investment.image} alt="" className="investment-card-image" />
-      <div className="investment-card-details">
-       <div className="investment-card-details-absolute">
-        <img
-         src={person}
-         alt=""
-         className="investment-card-details-absolute-img"
-        />
-        <h6>
-         verified Opportunity
-         <img src={verified} alt="" />
-        </h6>
-       </div>
-       <div className="investment-card-details-normal">
-        <h3>{investment.name}</h3>
-        <small>By an investment company</small>
-        <div className="investment-card-details-normal-detail">
-         <div className="per">
-          <h4>{investment.per}</h4>
-          <small>Per Unit</small>
-         </div>
-         <div className="investors">
-          <h4>{investment.investors}</h4>
-          <small>Investors</small>
-         </div>
-         <div className="returns">
-          <h4>{investment.rate}%</h4>
-          <small>Returns</small>
-         </div>
+  <Investmentpage>
+   <section className="investment">
+    <h3 className="investment-arrow" onClick={() => navigate("/invest")}>
+     <LeftArrow /> Investify
+    </h3>
+    <div className="investment-card">
+     <img src={investment.image} alt="" className="investment-card-image" />
+     <div className="investment-card-details">
+      <div className="investment-card-details-absolute">
+       <img
+        src={person}
+        alt=""
+        className="investment-card-details-absolute-img"
+       />
+       <h6>
+        verified Opportunity
+        <img src={verified} alt="" />
+       </h6>
+      </div>
+      <div className="investment-card-details-normal">
+       <h3>{investment.name}</h3>
+       <small>By an investment company</small>
+       <div className="investment-card-details-normal-detail">
+        <div className="per">
+         <h4>{investment.per}</h4>
+         <small>Per Unit</small>
         </div>
-        <Button to="" name="Invest Now" />
+        <div className="investors">
+         <h4>{investment.investors}</h4>
+         <small>Investors</small>
+        </div>
+        <div className="returns">
+         <h4>{investment.rate}%</h4>
+         <small>Returns</small>
+        </div>
        </div>
+       <Button to="" name="Invest Now" />
       </div>
      </div>
     </div>
-   </Investment>
-   <AllInvestmentsArea />
+   </section>
   </Investmentpage>
  );
 };
 
-const Investment = styled.main`
- display: flex;
- flex-direction: column;
- margin: 0 auto 3rem auto;
- align-items: center;
- /* height: 100vh; */
-
+const Investmentpage = styled.main`
+ 
  .investment {
   border-radius: 15px;
   border: 2px solid gray;
   padding: 4rem 2rem 2rem 2rem;
   width: 48%;
-  /* height: 100%; */
-
+  margin: 3rem auto;
   &-arrow {
    align-items: center;
    font-size: 2.5rem;
    color: #7913e5;
-
+   &:hover {
+    cursor: pointer;
+   }
    svg {
     color: #7913e5 !important;
    }
@@ -92,7 +85,6 @@ const Investment = styled.main`
    flex-direction: column;
    gap: 1rem;
    padding-top: 2rem;
-
    &-image {
     width: 100%;
    }
@@ -102,7 +94,6 @@ const Investment = styled.main`
     justify-content: space-between;
     align-items: center;
     padding-bottom: 20px;
-
     &-img {
      position: absolute;
      top: -100px;
@@ -123,7 +114,6 @@ const Investment = styled.main`
     flex-direction: column;
     gap: 1rem;
     justify-content: space-evenly;
-
     h3 {
      font-size: 25px;
      line-height: 1.2;
@@ -131,7 +121,6 @@ const Investment = styled.main`
     small {
      font-size: 18px;
     }
-
     &-detail {
      display: flex;
      justify-content: space-evenly;
@@ -172,13 +161,10 @@ const Investment = styled.main`
  }
  @media screen and (max-width: 428px) {
   margin: 2rem 1rem;
-
   .investment {
    width: 100%;
-
    &-card {
     padding-top: 1rem;
-
     &-details-absolute {
      &-img {
       width: 70px;
@@ -212,10 +198,8 @@ const Investment = styled.main`
  }
  @media screen and (max-width: 960px) {
   margin: 2rem 1rem;
-
   .investment {
    width: 80%;
-
    &-card {
     padding-top: 1rem;
     &-details-normal {
@@ -229,9 +213,5 @@ const Investment = styled.main`
    }
   }
  }
-`;
-const Investmentpage = styled.main`
- height: 100%;
- width: 100%;
 `;
 export default InvestmentPage;

@@ -32,7 +32,7 @@ const AllInvestmentsArea = () => {
  );
 };
 
-const AvailableInvestmentArea = styled.main`
+const AvailableInvestmentArea = styled.section`
  .investments {
   margin: 4rem;
 

@@ -9,6 +9,8 @@ import growImage from "/assets/grow.png";
 import { useNavigate } from "react-router-dom";
 import AllInvestmentsArea from "../Components/AllInvestments/AllInvestmentsArea";
 import Customers from "./../Components/Customers/Customers";
+import Featured from "../Components/Featured/Featured";
+import Footer from "../Components/Footer/Footer";
 
 const Invest = ({ Investments }) => {
  const navigate = useNavigate();
@@ -42,6 +44,8 @@ const Invest = ({ Investments }) => {
    />
    <AllInvestmentsArea />
    <Customers />
+   <Featured />
+   <Footer />
   </InvestPage>
  );
 };
