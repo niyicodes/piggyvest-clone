@@ -11,6 +11,8 @@ import cardDetails from "../Components/Card/cardDetails";
 import { RightArrow } from "../Components/Icons/icon";
 import Investment from "../Components/Invest/Investment";
 import Grow from "../Components/Grow/Grow";
+import Customers from "../Components/Customers/Customers";
+
 
 const Home = () => {
  return (
@@ -93,6 +95,7 @@ const Home = () => {
     name="Meet the Oyetade's"
     image={Savers}
    />
+   <Customers />
   </HomePage>
  );
 };

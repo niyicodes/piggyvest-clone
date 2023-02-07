@@ -12,7 +12,8 @@ const Card = ({
  availabilty,
  image,
  onClick,
- id
+ id,
+ rate
 }) => {
  return (
   <CardComponent className="card" onClick={onClick}>

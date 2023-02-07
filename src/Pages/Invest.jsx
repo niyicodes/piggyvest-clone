@@ -7,13 +7,14 @@ import Card from "../Components/Card/Card";
 import Grow from "../Components/Grow/Grow";
 import growImage from "/assets/grow.png";
 import { useNavigate } from "react-router-dom";
+import AllInvestmentsArea from "../Components/AllInvestments/AllInvestmentsArea";
+import Customers from "./../Components/Customers/Customers";
 
-const Invest = ({Investments}) => {
-  
-  const navigate = useNavigate()
-  useEffect(() => {
-    document.title = "Invesst in bits and on the go with investify™ - PiggyVest";
-  }, []);
+const Invest = ({ Investments }) => {
+ const navigate = useNavigate();
+ useEffect(() => {
+  document.title = "Invesst in bits and on the go with investify™ - PiggyVest";
+ }, []);
  return (
   <InvestPage>
    <Investment
@@ -39,24 +40,8 @@ const Invest = ({Investments}) => {
     subtitle="With as little as NGN5000, you can now access pre-vetted low-medium risk primary and secondary investment opportunities. No hidden fees/charges. Thorough due diligence and pre-vetting on all investments are carried out for maximum safety."
     image={growImage}
    />
-   <section className="investments">
-    <h2>Recent Opportunities on Investify</h2>
-    <div className="investments-area">
-     {Investments.map(({ name, per, investors, availabilty, image, onClick, id }) => {
-      return (
-       <Card
-        key={id}
-        name={name}
-        per={per}
-        investors={investors}
-        image={image}
-        availabilty={availabilty}
-        onClick={() => navigate(`/invest/${id}`)}
-       />
-      );
-     })}
-    </div>
-   </section>
+   <AllInvestmentsArea />
+   <Customers />
   </InvestPage>
  );
 };
@@ -147,95 +132,6 @@ const InvestPage = styled.main`
   }
  }
 
- .investments {
-  margin: 4rem;
-
-  h2 {
-   text-align: center;
-   padding: 40px 0;
-   font-size: 40px;
-  }
-
-  &-area {
-   display: grid;
-   grid-template-columns: repeat(3, auto);
-   column-gap: 1.5rem;
-   row-gap: 3rem;
-   margin-top: 3rem;
-   place-content: center;
-
-   .card {
-    gap: 0.5rem;
-    background-color: #f9f9f9;
-    padding: 0;
-    overflow: hidden;
-    cursor: pointer;
-    line-height: 1.2;
-    &:hover {
-     -webkit-box-shadow: 6px 8px 17px -2px #d6d6d6;
-     box-shadow: 6px 8px 17px -2px #d6d6d6;
-     transition: all 0.6s ease;
-    }
-    &:hover span {
-     transform: translateX(0);
-    }
-    img {
-     width: 100%;
-     height: 30%;
-     object-fit: cover;
-    }
-    h2 {
-     font-family: "Inter", sans-serif !important;
-     font-weight: 700;
-     font-size: 23px;
-     text-align: left;
-     padding: 0 20px;
-    }
-
-    &-info {
-     padding: 0 20px;
-     display: flex;
-     flex-direction: column;
-     /* justify-content: space-evenly; */
-     gap: 1rem;
-
-     &-details {
-      display: flex;
-      gap: 5rem;
-      text-align: justify;
-
-      div span {
-       display: flex;
-       flex-direction: column;
-       font-family: "DM Sans", sans-serif !important;
-       h5 {
-        font-size: 23px;
-        font-weight: 700;
-       }
-       small {
-        text-align: left;
-        font-size: 15px;
-        font-weight: 400;
-       }
-      }
-     }
-     h6 {
-      font-size: 23px;
-      margin-top: 1rem;
-      color: #b32e58;
-      display: inline-flex;
-      text-align: center;
-      span {
-       border-radius: 12px;
-       background-color: rgba(179, 46, 88, 0.07);
-       padding: 10px 25px;
-      }
-     }
-    }
-   }
-  }
- }
-
  @media screen and (max-width: 428px) {
   .reverse {
    flex-direction: column-reverse;
@@ -288,32 +184,6 @@ const InvestPage = styled.main`
     width: 100%;
    }
   }
-  .investments {
-   margin: 2rem;
-
-   h2 {
-    padding: 20px 0;
-    line-height: 1.1;
-    font-size: 35px;
-   }
-
-   &-area {
-    grid-template-columns: repeat(1, 1fr);
-    margin-bottom: 4rem;
-    row-gap: 2rem;
-
-    .card{
-      h2{
-        font-size: 21px;
-      }
-      &-info{
-        &-details{
-          text-align: left;
-        }
-      }
-    }
-   }
-  }
  }
  @media screen and (max-width: 960px) {
   .reverse {
@@ -358,13 +228,6 @@ const InvestPage = styled.main`
      text-align: justify;
     }
    }
-  }
-  .investments{
-    margin: 3rem;
-
-    &-area{
-      grid-template-columns: repeat(2, auto);
-    }
   }
  }
 `;
