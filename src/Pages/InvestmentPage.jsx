@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import AllInvestmentsArea from "../Components/AllInvestments/AllInvestmentsArea";
@@ -11,11 +11,14 @@ const InvestmentPage = ({ Investments }) => {
  const { id } = useParams();
  const [investment] = Investments.filter((investment) => investment.id === id);
  const navigate = useNavigate();
+ useEffect(() => {
+  document.title = `${investment.name}™ - PiggyVest`;
+ }, []);
  return (
   <Investmentpage className="investmentPage">
    <Investment>
     <div className="investment">
-     <h3 className="investment-arrow" onClick={() => navigate(-1)}>
+     <h3 className="investment-arrow" onClick={() => navigate("/invest")}>
       <LeftArrow /> Investify
      </h3>
      <div className="investment-card">

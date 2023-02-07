@@ -13,7 +13,7 @@ import Customers from "./../Components/Customers/Customers";
 const Invest = ({ Investments }) => {
  const navigate = useNavigate();
  useEffect(() => {
-  document.title = "Invesst in bits and on the go with investify™ - PiggyVest";
+  document.title = "Invest in bits and on the go with investify™ - PiggyVest";
  }, []);
  return (
   <InvestPage>
