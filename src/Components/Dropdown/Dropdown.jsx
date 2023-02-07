@@ -14,7 +14,7 @@ const Dropdown = () => {
             className={click ? 'dropdown-menu clicked' : 'dropdown-menu'}>
             {MenuItems.map((item, index) => {
                return (
-                  <span>
+                  <span key={index}>
                      <img src={item.icon} alt="" />
                      <li key={index}>
                      <Link className={item.cName} to={item.path} onClick={() => setClick(false)}>{item.title}</Link>

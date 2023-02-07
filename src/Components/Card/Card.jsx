@@ -1,13 +1,44 @@
 import React from "react";
 import styled from "styled-components";
 import { RightArrow } from "../Icons/icon";
-
-const Card = ({ topIcon, name, words, title, color }) => {
+const Card = ({
+ topIcon,
+ name,
+ words,
+ title,
+ color,
+ per,
+ investors,
+ availabilty,
+ image,
+ onClick,
+ id
+}) => {
  return (
-  <CardComponent className="card">
-   <img src={topIcon} alt="" />
+  <CardComponent className="card" onClick={onClick}>
+   {image && <img src={image} alt="" />}
+   {topIcon && <img src={topIcon} alt="" />}
    <h2>{name}</h2>
-   <p>{words}</p>
+   {words && <p>{words}</p>}
+   {per && (
+    <div className="card-info">
+     <div className="card-info-details">
+      <div>
+       <span>
+        <h5>₦{per}</h5>
+        <small>per unit</small>
+       </span>
+      </div>
+      <div>
+       <span>
+        <h5>{investors}</h5>
+        <small>investors</small>
+       </span>
+      </div>
+     </div>
+     {availabilty && <h6><span>{availabilty}</span></h6>}
+    </div>
+   )}
    {
     <span>
      {title && <RightArrow style={color} />}

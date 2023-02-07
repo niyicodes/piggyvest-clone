@@ -22,7 +22,7 @@ const cardDetails = [
   topIcon: target,
   name:"Goal-oriented Savings",
   words:"Reach all your savings goals faster. Save towards multiple goals on your own or with a group.",
-  title:"Target Saavings",
+  title:"Target Savings",
   color:"#069B40"
  },
  {

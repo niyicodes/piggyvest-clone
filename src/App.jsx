@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from './Pages/Home'
 import Piggybank from './Pages/Piggybank'
@@ -7,15 +7,16 @@ import Flex from './Pages/Flex'
 import Invest from './Pages/Invest'
 import Stories from './Pages/Stories'
 import FAQ from './Pages/FAQs'
-import SignIn from './Pages/SignIn'
-import SignUp from './Pages/SignUp'
+import InvestmentPage from './Pages/InvestmentPage'
 import Target from './Pages/Target'
 import Navbar from "./Components/Navbar/Navbar"
 import Featured from './Components/Featured/Featured'
 import Footer from './Components/Footer/Footer'
 import Customers from './Components/Customers/Customers'
+import investments from './Components/Invest/investments'
 
 function App() {
+  const [Investments, setInvestments] = useState(investments)
   return (
     <div className="">
       <Navbar />
@@ -25,11 +26,10 @@ function App() {
         <Route path='/safelock' element={<Safelock />} />
         <Route path='/targets' element={<Target />} />
         <Route path='/flex-naira' element={<Flex />} />
-        <Route path='/invest' element={<Invest />} />
+        <Route path='/invest' element={<Invest Investments={Investments}/>} />
         <Route path='/stories' element={<Stories />} />
         <Route path='/faq' element={<FAQ />} />
-        <Route path='/login' element={<SignIn />} />
-        <Route path='/register' element={<SignUp />} />
+        <Route path='/invest/:id' element={<InvestmentPage Investments={Investments}/>} />
       </Routes>
       <Customers />
       <Featured />
