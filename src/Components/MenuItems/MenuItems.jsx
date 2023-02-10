@@ -19,13 +19,13 @@ export const MenuItems = [
    },
    {
       title: 'Targeted Savings',
-      path: '/target',
+      path: '/targets',
       cName: 'dropdown-link',
       icon: target,
    },
    {
       title: 'Flex Naira',
-      path: '/flex',
+      path: '/flex-naira',
       cName: 'dropdown-link',
       icon: flex,
    }

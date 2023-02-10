@@ -69,7 +69,7 @@ const Home = () => {
      <Button to="/flex" name="Start Saving" />
     </div>
     <div className="card-area">
-     {cardDetails.map(({ topIcon, name, words, title }) => {
+     {cardDetails.map(({ topIcon, name, words, title, to }) => {
       return (
        <Card
         key={title}
@@ -77,6 +77,7 @@ const Home = () => {
         name={name}
         words={words}
         title={title}
+        to={to}
        />
       );
      })}

@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { RightArrow } from "../Icons/icon";
+
 const Card = ({
  topIcon,
  name,
@@ -13,8 +15,9 @@ const Card = ({
  image,
  onClick,
  id,
- rate
+ rate, to
 }) => {
+ const navigate = useNavigate()
  return (
   <CardComponent className="card" onClick={onClick}>
    {image && <img src={image} alt="" />}
@@ -41,7 +44,7 @@ const Card = ({
     </div>
    )}
    {
-    <span>
+    <span onClick={() => navigate(`/${to}`)}>
      {title && <RightArrow style={color} />}
      {title && <h4>{title}</h4>}
     </span>
