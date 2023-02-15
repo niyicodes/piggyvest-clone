@@ -8,9 +8,9 @@ const Featured = () => {
   return (
     <FeaturedIn>
      <div className='title'>
-      <h1>As featured in</h1>
+      <h1 className='animate__animated animate__slideInDown animate__slow'>As featured in</h1>
      </div>
-     <div className='images'>
+     <div className='images animate__animated animate__zoomInUp animate__slower'>
       <a href="">
        <img src={point} alt="" />
       </a>

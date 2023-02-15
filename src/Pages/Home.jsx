@@ -21,8 +21,8 @@ const Home = () => {
   <HomePage>
    <section className="textimg">
     <div className="text">
-     <h3>The Better Way to Save & Invest.</h3>
-     <p>
+     <h3 className="animate__animated animate__fadeInLeft">The Better Way to Save & Invest.</h3>
+     <p className="animate__animated animate__fadeInUp">
       PiggyVest helps over 4 million customers achieve their financial goals by
       helping them save and invest with ease.
      </p>
@@ -42,7 +42,7 @@ const Home = () => {
       />
      </div>
     </div>
-    <div className="img">
+    <div className="img animate__animated animate__slideInDown">
      <img src={Girl} alt="girl" />
     </div>
    </section>
@@ -51,7 +51,7 @@ const Home = () => {
      <img src={Security} alt="security" />
     </div>
     <div className="security-text">
-     <h3>Your security is our priority</h3>
+     <h3 className="animate__animated animate__slideInRight animate__slower">Your security is our priority</h3>
      <p>
       PiggyVest uses the highest level of Internet Security and it is secured by
       256 bits SSL security encryption to ensure that your information is
@@ -63,7 +63,7 @@ const Home = () => {
     </div>
    </section>
    <section className="build">
-    <div className="build-area">
+    <div className="build-area animate__animated animate__zoomIn animate__slower">
      <h4>4 ways to build your savings</h4>
      <p>Earn 5%-15% when you save with any of these PiggyVest plans.</p>
      <Button to="/flex" name="Start Saving" />

@@ -19,7 +19,7 @@ const Card = ({
 }) => {
  const navigate = useNavigate()
  return (
-  <CardComponent className="card" onClick={onClick}>
+  <CardComponent className="card animate__animated animate__zoomIn animate__slow" onClick={onClick}>
    {image && <img src={image} alt="" />}
    {topIcon && <img src={topIcon} alt="" />}
    <h2>{name}</h2>

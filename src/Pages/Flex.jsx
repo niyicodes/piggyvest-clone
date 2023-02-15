@@ -25,7 +25,7 @@ const Flex = () => {
    />
    <section className="build">
     <div className="build-area">
-     <h4>Be better prepared for emergencies.</h4>
+     <h4 className="animate__animated animate__flipInX">Be better prepared for emergencies.</h4>
      <p>Building an emergency fund helps hedge against life’s risks and can help reduce frivolous spending.</p>
     </div>
     <div className="card-area">

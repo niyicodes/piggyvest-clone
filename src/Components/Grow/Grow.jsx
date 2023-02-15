@@ -5,7 +5,7 @@ import { RightArrow } from "../Icons/icon";
 const Grow = ({ title, subtitle, name, image }) => {
  return (
   <GrowInvestment className="saver">
-   <div className="saver-meet">
+   <div className="saver-meet animate__animated animate__zoomIn animate__slower">
     <div className="another">
      <h2>{title}</h2>
      <p>

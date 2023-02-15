@@ -25,7 +25,7 @@ const Piggybank = () => {
    />
    <section className="build">
     <div className="build-area">
-     <h4>Save without thinking about it.</h4>
+     <h4 className="animate__animated animate__flipInX">Save without thinking about it.</h4>
      <p>Enjoy automated savings, quick manual savings top up and competitive interest rates.</p>
     </div>
     <div className="card-area">

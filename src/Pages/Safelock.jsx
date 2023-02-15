@@ -18,14 +18,14 @@ const Safelock = () => {
   <SafelockPage>
    <Investment
     image={safelock1}
-    title="Safelockk"
+    title="Safelock"
     subtitle="Lock funds away for a fixed period of time to avoid spending temptation. Earn up to 12.5% p.a. paid upfront."
     button="Start Saving Today"
     to="/"
    />
    <section className="build">
     <div className="build-area">
-     <h4>Stay disciplined and avoid temptation</h4>
+     <h4 className="animate__animated animate__flipInX">Stay disciplined and avoid temptation</h4>
      <p>
       Lock funds to avoid temptations. Earn your interest upfront and paid
       instantly.

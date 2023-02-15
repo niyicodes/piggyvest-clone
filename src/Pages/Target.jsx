@@ -26,7 +26,7 @@ const Target = () => {
    />
    <section className="build">
     <div className="build-area">
-     <h4>Save towards multiple goals</h4>
+     <h4 className="animate__animated animate__flipInX">Save towards multiple goals</h4>
      <p>
      Target Savings helps you get there faster. You can even team up with others to reach a collective target.
      </p>

@@ -28,7 +28,7 @@ const Invest = ({ Investments }) => {
    />
    <section className="build">
     <div className="build-area">
-     <h4>Simple investments with great returns</h4>
+     <h4 className="animate__animated animate__flipInX">Simple investments with great returns</h4>
      <p>Investments are made readily accessible to everyone</p>
     </div>
     <div className="card-area">

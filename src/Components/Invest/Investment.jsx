@@ -20,9 +20,9 @@ const Investment = ({
     <img src={image} alt="invest" />
    </div>
    <div className="invest-text">
-    <h5>{tag}</h5>
-    <h3>{title}</h3>
-    <p>{subtitle}</p>
+    <h5 className="animate__animated animate__zoomIn animate__slow">{tag}</h5>
+    <h3 className="animate__animated animate__fadeInRightBig animate__slow">{title}</h3>
+    <p className="animate__animated animate__slideInLeft animate__slow">{subtitle}</p>
     {link && <Link to={linkto}>{link}</Link>}
     {button && <Button to={to} name={button} />}
    </div>

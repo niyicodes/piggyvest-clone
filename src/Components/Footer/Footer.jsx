@@ -6,7 +6,7 @@ import audit from "/assets/audit.png";
 const Footer = () => {
  return (
   <FooterComponent>
-   <section className="top">
+   <section className="top animate__animated animate__slideInLeft animate__slow">
     <div className="top-left">
      <figure>
       <img src={piggyblack} alt="" />
@@ -84,7 +84,7 @@ const Footer = () => {
      </div>
     </div>
    </section>
-   <section className="bottom">
+   <section className="bottom animate__animated animate__slideInRight animate__slow">
     <p>Piggyvest (formerly piggybank.ng) is the leading online savings & investing platform in Nigeria. For over 6 years, our customers have saved and invested billions of Naira that they would normally be tempted to spend.</p>
     <small>2016 - 2022 PiggyTech Global Limited - RC 1405222</small>
    </section>
